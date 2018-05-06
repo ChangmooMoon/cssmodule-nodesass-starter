@@ -1,0 +1,23 @@
+$my-color: #00ff2f;
+// mixin으로 스타일 재사용성 굿굿
+@mixin centerize() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin square($size) {
+    width: $size;
+    height: $size;
+}
+
+.Sassy {
+    .nested {
+        .very-nested {
+            background: $my-color;
+            color: white; //mixin 사용
+            @include square(100px);
+            @include centerize();
+        }
+    }
+}
